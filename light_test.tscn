@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://bntiaccu5drjx"]
+
+[ext_resource type="PackedScene" uid="uid://8v7ocjilhebj" path="res://generic_background.tscn" id="1_ynt1l"]
+[ext_resource type="PackedScene" uid="uid://ctlrhvfn1h7xs" path="res://a_wizard.tscn" id="2_i7g01"]
+[ext_resource type="PackedScene" uid="uid://t2yt2fssbfd3" path="res://lights_1.tscn" id="3_v3582"]
+
+[node name="LightTest" type="Node2D"]
+
+[node name="GenericBackground" parent="." instance=ExtResource("1_ynt1l")]
+
+[node name="A Wizard" parent="." instance=ExtResource("2_i7g01")]
+
+[node name="Lights1" parent="." instance=ExtResource("3_v3582")]

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://buwaga2psthat"]
+
+[node name="Main" type="Node"]
+
+[node name="TestButtons" type="GridContainer" parent="."]
+offset_right = 720.0
+offset_bottom = 640.0
+
+[node name="Control" type="Button" parent="TestButtons"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Start button"
+icon_alignment = 1

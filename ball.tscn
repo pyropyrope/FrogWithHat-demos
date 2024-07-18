@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://310xpr3vsvp8"]
+
+[ext_resource type="Texture2D" uid="uid://blim85cepxjr7" path="res://assets/ball/ball.png" id="1_g80q6"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_r3nl5"]
+
+[sub_resource type="GDScript" id="GDScript_fb7st"]
+script/source = "extends RigidBody2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bqekf"]
+radius = 13.0384
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_msjai"]
+polygon = PackedVector2Array(0, -13, -5, -12, -9, -9, -12, -5, -13, 0, -12, 5, -9, 9, -5, 12, 0, 13, 5, 12, 9, 9, 12, 5, 13, 0, 12, -5, 9, -9, 5, -12)
+
+[node name="ball" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_r3nl5")
+script = SubResource("GDScript_fb7st")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_g80q6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bqekf")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_msjai")

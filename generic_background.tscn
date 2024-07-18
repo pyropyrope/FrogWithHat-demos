@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://8v7ocjilhebj"]
+
+[sub_resource type="GDScript" id="GDScript_vqfci"]
+script/source = "extends Sprite2D
+var screen_size
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	screen_size = get_viewport_rect()
+
+func _draw():
+	draw_rect(screen_size, Color.DARK_SLATE_GRAY)
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[node name="GenericBackground" type="Sprite2D"]
+script = SubResource("GDScript_vqfci")

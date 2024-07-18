@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctlrhvfn1h7xs"]
+
+[ext_resource type="Texture2D" uid="uid://4uete23t2sue" path="res://assets/wizard/A_Wizard.png" id="1_nunbf"]
+[ext_resource type="Script" path="res://a_wizard.gd" id="1_q3osm"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3vqm6"]
+polygon = PackedVector2Array(-9, -34, -33, 55, 32, 55, 23, -34)
+
+[node name="A Wizard" type="CharacterBody2D"]
+position = Vector2(3, 0)
+motion_mode = 1
+script = ExtResource("1_q3osm")
+metadata/_edit_group_ = true
+
+[node name="Wizard Art" type="Sprite2D" parent="."]
+texture = ExtResource("1_nunbf")
+
+[node name="WizardCollision" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-9, -34, -33, 55, 33, 55, 23, -34)
+
+[node name="WizardOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_3vqm6")
+
+[node name="TestPolygon" type="Polygon2D" parent="."]
+top_level = true
+color = Color(0.704714, 0.466017, 0.647896, 1)

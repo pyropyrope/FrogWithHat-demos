@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://cw58lhd6nh171"
+path="res://.godot/imported/A_Wizard.bmp-478f17ae14b008e64ae4fcc2f61c8f4e.res"
+
+[deps]
+
+source_file="res://assets/wizard/A_Wizard.bmp"
+dest_files=["res://.godot/imported/A_Wizard.bmp-478f17ae14b008e64ae4fcc2f61c8f4e.res"]
+
+[params]
+
+create_from=0
+threshold=0.5
