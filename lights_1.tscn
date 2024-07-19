@@ -12,7 +12,16 @@ fill_to = Vector2(1, 0.5)
 [node name="Lights1" type="Node2D"]
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(543, 286)
+position = Vector2(658, 185)
+scale = Vector2(12.3867, 7.60156)
+color = Color(0.853413, 0.773709, 0.951444, 1)
+range_item_cull_mask = 0
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.552941)
+texture = SubResource("GradientTexture2D_n2kix")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(84, 102)
 scale = Vector2(12.3867, 7.60156)
 color = Color(0.853413, 0.773709, 0.951444, 1)
 shadow_enabled = true

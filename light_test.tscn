@@ -8,6 +8,7 @@
 
 [node name="GenericBackground" parent="." instance=ExtResource("1_ynt1l")]
 
-[node name="A Wizard" parent="." instance=ExtResource("2_i7g01")]
-
 [node name="Lights1" parent="." instance=ExtResource("3_v3582")]
+
+[node name="A Wizard" parent="." instance=ExtResource("2_i7g01")]
+top_level = true

@@ -15,6 +15,7 @@ func _ready():
 	var oc_poly = make_occluder_poly(vector_array)
 	$WizardOccluder2D.occluder = oc_poly
 
+
 func get_input():
 	#8 way movement
 	var input_direction = Input.get_vector("left", "right", "up", "down")
@@ -28,7 +29,7 @@ func make_polygons(bm):
 	#create empty array
 	var vectors = PackedVector2Array()
 	#run opaque_to_polygons method for bitmaps
-	vectors = bm.opaque_to_polygons(Rect2(Vector2(), bit_map.get_size()),4.0)
+	vectors = bm.opaque_to_polygons(Rect2(Vector2(), bit_map.get_size()),1.0)
 	#test line
 	print(vectors)
 	return vectors[0]
