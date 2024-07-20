@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://deivqb1e6t55u"]
+
+[ext_resource type="Script" path="res://PowerLight.gd" id="1_vafu2"]
+[ext_resource type="Script" path="res://BroadSensor.gd" id="2_bwoml"]
+[ext_resource type="Script" path="res://LightLight.gd" id="2_x48fn"]
+
+[sub_resource type="Gradient" id="Gradient_kmnqs"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_d22ll"]
+gradient = SubResource("Gradient_kmnqs")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ulv2e"]
+radius = 32.0
+
+[node name="PowerLight" type="Node2D"]
+script = ExtResource("1_vafu2")
+
+[node name="LightLight" type="PointLight2D" parent="."]
+scale = Vector2(0.998194, 1)
+shadow_enabled = true
+shadow_item_cull_mask = 2
+texture = SubResource("GradientTexture2D_d22ll")
+script = ExtResource("2_x48fn")
+
+[node name="BroadSensor" type="Area2D" parent="."]
+script = ExtResource("2_bwoml")
+
+[node name="SensorShape" type="CollisionShape2D" parent="BroadSensor"]
+shape = SubResource("CircleShape2D_ulv2e")
+
+[connection signal="area_shape_entered" from="BroadSensor" to="." method="_on_broad_sensor_area_shape_entered"]
+[connection signal="body_shape_entered" from="BroadSensor" to="." method="_on_broad_sensor_body_shape_entered"]

@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://vjy0rnnns1q8"]
+
+[ext_resource type="PackedScene" uid="uid://8v7ocjilhebj" path="res://generic_background.tscn" id="1_s3svg"]
+[ext_resource type="PackedScene" uid="uid://6ran1xmjr5u" path="res://area_object_with_properties.tscn" id="2_ekwfi"]
+[ext_resource type="PackedScene" uid="uid://8c8t5y10ni7r" path="res://solid_object_with_properties.tscn" id="3_4cmtn"]
+[ext_resource type="PackedScene" uid="uid://deivqb1e6t55u" path="res://power_light.tscn" id="4_wg353"]
+
+[node name="PowerLightTester" type="Node2D"]
+
+[node name="GenericBackground" parent="." instance=ExtResource("1_s3svg")]
+
+[node name="PowerLight" parent="." instance=ExtResource("4_wg353")]
+position = Vector2(347, 308)
+rotation = 3.14159
+scale = Vector2(10.6144, -9.80021)
+
+[node name="Solid1" parent="." instance=ExtResource("3_4cmtn")]
+position = Vector2(194, 288)
+
+[node name="Solid2" parent="." instance=ExtResource("3_4cmtn")]
+visible = false
+position = Vector2(327, 79)
+light_sensitive = false
+
+[node name="Solid3" parent="." instance=ExtResource("3_4cmtn")]
+visible = false
+position = Vector2(432, 288)
+light_sensitive = false
+
+[node name="Solid4" parent="." instance=ExtResource("3_4cmtn")]
+visible = false
+position = Vector2(544, 288)
+light_sensitive = false
+
+[node name="Area1" parent="." instance=ExtResource("2_ekwfi")]
+visible = false
+position = Vector2(44, 288)
+light_sensitive = false
+
+[node name="Area2" parent="." instance=ExtResource("2_ekwfi")]
+visible = false
+position = Vector2(327, 208)
+light_sensitive = false
+
+[node name="Area3" parent="." instance=ExtResource("2_ekwfi")]
+visible = false
+position = Vector2(327, 409)
+light_sensitive = false
+
+[node name="Area4" parent="." instance=ExtResource("2_ekwfi")]
+visible = false
+position = Vector2(327, 549)
+light_sensitive = false

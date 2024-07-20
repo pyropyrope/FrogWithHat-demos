@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://8c8t5y10ni7r"]
+
+[ext_resource type="Script" path="res://solid_object_with_properties.gd" id="1_bo6uh"]
+[ext_resource type="Script" path="res://solid_object_with-properties_sprite2d.gd" id="1_v1l88"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xddnt"]
+size = Vector2(40, 40)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_m6j2x"]
+polygon = PackedVector2Array(0, 0, 0, 40, 40, 40, 40, 0)
+
+[node name="SolidObjectWithProperties" type="StaticBody2D"]
+script = ExtResource("1_bo6uh")
+
+[node name="SolidObjectSprite2D" type="Sprite2D" parent="."]
+script = ExtResource("1_v1l88")
+
+[node name="SolidObjectCollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_xddnt")
+
+[node name="SolidLightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_m6j2x")
+occluder_light_mask = 3
