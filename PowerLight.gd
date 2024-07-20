@@ -1,11 +1,14 @@
 extends Node2D
 
+@export var ray_for_solids: PackedScene
+@export var speed = 250
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	move(delta)
 
 #on area entering the sensor shape
 func _on_broad_sensor_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
@@ -18,9 +21,7 @@ func _on_broad_sensor_body_shape_entered(body_rid, body, body_shape_index, local
 	#check if object cares about light
 	if check_light_sensitive(body) == true:
 		print(body)
-		print(body.get_center())
-		if start_tracking (body, true):
-			pass
+		start_tracking (body, true)
 
 #checks if object cares about light
 func check_light_sensitive(obj):
@@ -34,10 +35,33 @@ func check_light_sensitive(obj):
 	elif obj.is_light_sensitive() == true:
 		return true
 
-#checks if the function is currently in the light (unobstucted by a shadow casting object)
+#creates a tracking ray of appropriate type for given object
+
 #takes object and a booleen for if you can see through it
 func start_tracking (obj, is_solid):
-	var center
-	var ray
+	#checks if object is "solid"
+	if is_solid == true:
+		#creates a solids ray
+		var ray = ray_for_solids.instantiate()
+		#passes new ray the object
+		ray.setup(obj)
+		#adds to the tracking rays node
+		$TrackingRays.add_child(ray)
+		print($TrackingRays.get_child_count ())
 	
 	
+func move(delta):
+	var velocity = Vector2.ZERO # The player's movement vector.
+	if Input.is_action_pressed("right"):
+		velocity.x += 1
+	if Input.is_action_pressed("left"):
+		velocity.x -= 1
+	if Input.is_action_pressed("down"):
+		velocity.y += 1
+	if Input.is_action_pressed("up"):
+		velocity.y -= 1
+
+	if velocity.length() > 0:
+		velocity = velocity.normalized() * speed
+	
+	position += velocity * delta

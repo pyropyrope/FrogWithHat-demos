@@ -18,9 +18,7 @@ scale = Vector2(10.6144, -9.80021)
 position = Vector2(194, 288)
 
 [node name="Solid2" parent="." instance=ExtResource("3_4cmtn")]
-visible = false
 position = Vector2(327, 79)
-light_sensitive = false
 
 [node name="Solid3" parent="." instance=ExtResource("3_4cmtn")]
 visible = false
