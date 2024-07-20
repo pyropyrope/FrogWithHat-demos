@@ -1,6 +1,5 @@
 extends RayCast2D
 var target_object
-var target_pos
 
 
 
@@ -14,14 +13,14 @@ func _physics_process(delta):
 
 	if target_object != null:
 		update_target_pos()
-		pass
-	print(self)
-	print(target_object == get_collider())
+	
+	
 
 func setup(solid):
 	target_object = solid
 	
 
 func update_target_pos ():
-	target_position = target_object.get_center() - global_position
+	target_position = to_local(target_object.get_center())
+	
 	
