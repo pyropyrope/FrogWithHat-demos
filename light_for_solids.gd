@@ -10,12 +10,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-
 	if target_object != null:
 		update_target_pos()
 	
-	
-
 func setup(solid):
 	target_object = solid
 	

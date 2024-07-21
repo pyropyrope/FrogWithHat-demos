@@ -40,3 +40,4 @@ script = ExtResource("5_nkugp")
 
 [connection signal="area_shape_entered" from="BroadSensor" to="." method="_on_broad_sensor_area_shape_entered"]
 [connection signal="body_shape_entered" from="BroadSensor" to="." method="_on_broad_sensor_body_shape_entered"]
+[connection signal="body_shape_exited" from="BroadSensor" to="." method="_on_broad_sensor_body_shape_exited"]

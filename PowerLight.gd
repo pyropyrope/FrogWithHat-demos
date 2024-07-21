@@ -20,8 +20,8 @@ func _on_broad_sensor_area_shape_entered(area_rid, area, area_shape_index, local
 func _on_broad_sensor_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	#check if object cares about light
 	if check_light_sensitive(body) == true:
-		print(body)
 		start_tracking (body, true)
+
 
 #checks if object cares about light
 func check_light_sensitive(obj):
@@ -47,7 +47,8 @@ func start_tracking (obj, is_solid):
 		ray.setup(obj)
 		#adds to the tracking rays node
 		$TrackingRays.add_child(ray)
-		print($TrackingRays.get_child_count ())
+		$TrackingRays.add_to_dict(obj,ray)
+		
 	
 	
 func move(delta):
@@ -65,3 +66,7 @@ func move(delta):
 		velocity = velocity.normalized() * speed
 	
 	position += velocity * delta
+
+
+func _on_broad_sensor_body_shape_exited(body_rid, body, body_shape_index, local_shape_index):
+	$TrackingRays.delete(body)

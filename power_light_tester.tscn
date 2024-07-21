@@ -21,14 +21,10 @@ position = Vector2(194, 288)
 position = Vector2(327, 79)
 
 [node name="Solid3" parent="." instance=ExtResource("3_4cmtn")]
-visible = false
 position = Vector2(432, 288)
-light_sensitive = false
 
 [node name="Solid4" parent="." instance=ExtResource("3_4cmtn")]
-visible = false
 position = Vector2(544, 288)
-light_sensitive = false
 
 [node name="Area1" parent="." instance=ExtResource("2_ekwfi")]
 visible = false
