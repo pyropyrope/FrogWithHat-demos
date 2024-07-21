@@ -1,7 +1,7 @@
 extends Node2D
-
 @export var ray_for_solids: PackedScene
 @export var ray_for_areas: PackedScene
+
 @export var speed = 250
 
 # Called when the node enters the scene tree for the first time.

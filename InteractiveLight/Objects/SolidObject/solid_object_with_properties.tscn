@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://8c8t5y10ni7r"]
+[gd_scene load_steps=5 format=3 uid="uid://dfvaxbykmdvi5"]
 
-[ext_resource type="Script" path="res://solid_object_with_properties.gd" id="1_bo6uh"]
-[ext_resource type="Script" path="res://solid_object_with-properties_sprite2d.gd" id="1_v1l88"]
+[ext_resource type="Script" path="res://InteractiveLight/Objects/SolidObject/solid_object_with_properties.gd" id="1_bo6uh"]
+[ext_resource type="Script" path="res://InteractiveLight/Objects/SolidObject/solid_object_with-properties_sprite2d.gd" id="1_v1l88"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xddnt"]
 size = Vector2(40, 40)

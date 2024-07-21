@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://deivqb1e6t55u"]
+[gd_scene load_steps=9 format=3 uid="uid://deivqb1e6t55u"]
 
-[ext_resource type="Script" path="res://PowerLight.gd" id="1_vafu2"]
-[ext_resource type="Script" path="res://BroadSensor.gd" id="2_bwoml"]
-[ext_resource type="PackedScene" uid="uid://bampsnem1f3ts" path="res://light_for_solids.tscn" id="2_p3lo2"]
-[ext_resource type="Script" path="res://LightLight.gd" id="2_x48fn"]
-[ext_resource type="PackedScene" uid="uid://6o7awyc8tyv1" path="res://light_for_areas.tscn" id="3_i3vbm"]
-[ext_resource type="Script" path="res://TrackingRays.gd" id="5_nkugp"]
+[ext_resource type="Script" path="res://InteractiveLight/LightParts/PowerLight.gd" id="1_vafu2"]
+[ext_resource type="Script" path="res://InteractiveLight/LightParts/BroadSensor.gd" id="2_bwoml"]
+[ext_resource type="PackedScene" uid="uid://bampsnem1f3ts" path="res://InteractiveLight/LightParts/Raycasts/ForSolids/light_for_solids.tscn" id="2_p3lo2"]
+[ext_resource type="PackedScene" uid="uid://6o7awyc8tyv1" path="res://InteractiveLight/LightParts/Raycasts/ForAreas/light_for_areas.tscn" id="3_i3vbm"]
+[ext_resource type="Script" path="res://InteractiveLight/LightParts/Raycasts/TrackingRays.gd" id="5_a2jhw"]
 
 [sub_resource type="Gradient" id="Gradient_kmnqs"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -29,7 +28,6 @@ scale = Vector2(0.998194, 1)
 shadow_enabled = true
 shadow_item_cull_mask = 2
 texture = SubResource("GradientTexture2D_d22ll")
-script = ExtResource("2_x48fn")
 
 [node name="BroadSensor" type="Area2D" parent="."]
 script = ExtResource("2_bwoml")
@@ -38,7 +36,7 @@ script = ExtResource("2_bwoml")
 shape = SubResource("CircleShape2D_ulv2e")
 
 [node name="TrackingRays" type="Node2D" parent="."]
-script = ExtResource("5_nkugp")
+script = ExtResource("5_a2jhw")
 
 [connection signal="area_shape_entered" from="BroadSensor" to="." method="_on_broad_sensor_area_shape_entered"]
 [connection signal="area_shape_exited" from="BroadSensor" to="." method="_on_broad_sensor_area_shape_exited"]

@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://vjy0rnnns1q8"]
 
 [ext_resource type="PackedScene" uid="uid://8v7ocjilhebj" path="res://generic_background.tscn" id="1_s3svg"]
-[ext_resource type="PackedScene" uid="uid://6ran1xmjr5u" path="res://area_object_with_properties.tscn" id="2_ekwfi"]
-[ext_resource type="PackedScene" uid="uid://8c8t5y10ni7r" path="res://solid_object_with_properties.tscn" id="3_4cmtn"]
+[ext_resource type="PackedScene" uid="uid://6ran1xmjr5u" path="res://InteractiveLight/Objects/AreaObject/area_object_with_properties.tscn" id="2_ekwfi"]
+[ext_resource type="PackedScene" uid="uid://dfvaxbykmdvi5" path="res://InteractiveLight/Objects/SolidObject/solid_object_with_properties.tscn" id="3_4cmtn"]
 [ext_resource type="PackedScene" uid="uid://deivqb1e6t55u" path="res://power_light.tscn" id="4_wg353"]
 
 [node name="PowerLightTester" type="Node2D"]
