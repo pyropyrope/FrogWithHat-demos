@@ -24,3 +24,8 @@ func delete(body):
 func add_to_dict(obj,ray):
 	rays[obj] = ray
 	print(rays)
+
+func check_objects():
+	for i in rays:
+		print(i)
+		print(rays[i].check_lit())

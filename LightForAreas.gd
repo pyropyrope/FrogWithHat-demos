@@ -4,17 +4,20 @@ var target_object
 
 
 # Called when the node enters the scene tree for the first time.
+#allows collision with areas
 func _ready():
-	pass # Replace with function body.
+	collide_with_areas = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	
 	if target_object != null:
 		update_target_pos()
+		update_exceptions()
 	
-func setup(solid):
-	target_object = solid
+func setup(area):
+	target_object = area
 	
 
 func update_target_pos ():
@@ -26,3 +29,10 @@ func check_lit():
 		return true
 	else:
 		return false
+
+func update_exceptions():
+	if get_collider() == target_object:
+		pass
+	elif get_collider() != target_object:
+		if str(get_collider()).contains("Area"):
+			add_exception(get_collider())

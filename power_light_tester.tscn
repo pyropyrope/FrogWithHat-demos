@@ -27,21 +27,13 @@ position = Vector2(432, 288)
 position = Vector2(544, 288)
 
 [node name="Area1" parent="." instance=ExtResource("2_ekwfi")]
-visible = false
 position = Vector2(44, 288)
-light_sensitive = false
 
 [node name="Area2" parent="." instance=ExtResource("2_ekwfi")]
-visible = false
 position = Vector2(327, 208)
-light_sensitive = false
 
 [node name="Area3" parent="." instance=ExtResource("2_ekwfi")]
-visible = false
 position = Vector2(327, 409)
-light_sensitive = false
 
 [node name="Area4" parent="." instance=ExtResource("2_ekwfi")]
-visible = false
 position = Vector2(327, 549)
-light_sensitive = false

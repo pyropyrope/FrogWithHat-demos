@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://deivqb1e6t55u"]
+[gd_scene load_steps=10 format=3 uid="uid://deivqb1e6t55u"]
 
 [ext_resource type="Script" path="res://PowerLight.gd" id="1_vafu2"]
 [ext_resource type="Script" path="res://BroadSensor.gd" id="2_bwoml"]
 [ext_resource type="PackedScene" uid="uid://bampsnem1f3ts" path="res://light_for_solids.tscn" id="2_p3lo2"]
 [ext_resource type="Script" path="res://LightLight.gd" id="2_x48fn"]
+[ext_resource type="PackedScene" uid="uid://6o7awyc8tyv1" path="res://light_for_areas.tscn" id="3_i3vbm"]
 [ext_resource type="Script" path="res://TrackingRays.gd" id="5_nkugp"]
 
 [sub_resource type="Gradient" id="Gradient_kmnqs"]
@@ -21,6 +22,7 @@ radius = 32.0
 [node name="PowerLight" type="Node2D"]
 script = ExtResource("1_vafu2")
 ray_for_solids = ExtResource("2_p3lo2")
+ray_for_areas = ExtResource("3_i3vbm")
 
 [node name="LightLight" type="PointLight2D" parent="."]
 scale = Vector2(0.998194, 1)
@@ -39,5 +41,6 @@ shape = SubResource("CircleShape2D_ulv2e")
 script = ExtResource("5_nkugp")
 
 [connection signal="area_shape_entered" from="BroadSensor" to="." method="_on_broad_sensor_area_shape_entered"]
+[connection signal="area_shape_exited" from="BroadSensor" to="." method="_on_broad_sensor_area_shape_exited"]
 [connection signal="body_shape_entered" from="BroadSensor" to="." method="_on_broad_sensor_body_shape_entered"]
 [connection signal="body_shape_exited" from="BroadSensor" to="." method="_on_broad_sensor_body_shape_exited"]

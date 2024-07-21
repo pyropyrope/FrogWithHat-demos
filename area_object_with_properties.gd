@@ -14,4 +14,4 @@ func is_light_sensitive():
 	return light_sensitive
 
 func get_center():
-	return $SolidObjectCollisionShape2D.global_position
+	return $AreaObjectCollisionShape2D.global_position
